@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>  </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/f.css' %}" />
+
+</head>	
+<body>
+
+<div class="form-container">
+    <form  method="GET" class="form-wrap" >
+        <h1 >Forgot Password </h1>
+        <br>
+        <div class="form-box">
+            <input name="who" type="text" placeholder="Username" />
+            <br>
+            <br>
+            <input name="phn" type="text" placeholder="Phone number" />
+            <br>
+            <br>
+            <input name="pass" onkeyup="validatePassword(this.value);" type="password"  placeholder="New password" /><span id="msg"></span>
+            <br>
+            <br>
+            <input type="password" onkeyup="validatePassword(this.value);"  name="repass" placeholder="Renter New password" />
+            
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="Send" />
+        </div>
+    </form>
+</div>
+
+</body>
+<script> 
+	function fun() { 
+		var name = document.forms["RegForm"]["Name"]; 
+	    //var email = document.forms["RegForm"]["EMail"];
+		var phone = document.forms["RegForm"]["Ph"]; 
+		//var what = document.forms["RegForm"]["Subject"]; 
+        var password = document.forms["RegForm"]["p1"]; 
+		var p2 = document.forms["RegForm"]["p2"]; 
+
+		if (name.value == "") { 
+			window.alert("Please enter your name."); 
+			name.focus(); 
+			return false; 
+		} 
+		if (password.value == "") { 
+			window.alert("Please enter your password"); 
+			password.focus(); 
+			return false; 
+        } 
+        
+
+		if (p2.value == "") { 
+			window.alert( 
+			"Please renter password."); 
+			phone.focus(); 
+			return false; 
+		} 
+        if(password.value!=p2.value)
+        {
+            window.alert("Password does not match"); 
+			password.focus(); 
+			return false; 
+
+        }
+
+	
+		return true; 
+	} 
+	function validatePassword(password) {
+                
+		// Do not show anything when the length of password is zero.
+		if (password.length === 0) {
+			document.getElementById("msg").innerHTML = "";
+			return;
+		}
+		// Create an array and push all possible values that you want in password
+		var matchedCase = new Array();
+		matchedCase.push("[$@$!%*#?&]"); // Special Charector
+		matchedCase.push("[A-Z]");      // Uppercase Alpabates
+		matchedCase.push("[0-9]");      // Numbers
+		matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+		// Check the conditions
+		var ctr = 0;
+		for (var i = 0; i < matchedCase.length; i++) {
+			if (new RegExp(matchedCase[i]).test(password)) {
+				ctr++;
+			}
+		}
+		// Display it
+		var color = "";
+		var strength = "";
+		switch (ctr) {
+			case 0:
+			case 1:
+			case 2:
+				strength = "Very Weak";
+				color = "white";
+				break;
+			case 3:
+				strength = "Medium";
+				color = "white";
+				break;
+			case 4:
+				strength = "Strong";
+				color = "white";
+				break;
+		}
+		document.getElementById("msg").innerHTML = strength;
+		document.getElementById("msg").style.color = color;
+	}
+
+
+
+</script> 
+
+
+</html>	

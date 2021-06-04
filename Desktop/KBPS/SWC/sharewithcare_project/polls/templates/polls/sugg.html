@@ -1,0 +1,142 @@
+{%load static%}
+<html>
+    <head>
+        <link rel="stylesheet" href="{%static 'css/Suggestion.css'%}">
+        <title>Farmer Suggestions</title>
+        </head>
+        <body>
+        <div class="regform"><h1>Farmer Suggestions</h1></div>
+        <div class="main">
+	<h1 style="color: deepskyblue;"> These are items and their ratings </h1>   
+    {% for i in feed %}
+    <h2 style="color: deepskyblue;">{{i.crop_name}} and it's rating is {{i.rate}}<br></h2>
+    {% endfor %}
+          <div id="soil_suggest"></div>
+          <form>
+           <div >
+            <h2 class="name">Soil</h2>
+            <select class="option" name="account"  id="soil">
+            <!--<option disabled="disabled" selected="selected">Choose Option</option>-->
+            <option value="1">Black Soil</option>
+            <option value="2">Red Soil</option>
+            <option value="3">Alluvial Soil</option>
+            <option value="4">Laterite Soil</option>
+	    <option value="5">Arid Soil</option>
+		<option value="5">Desert Soil</option>
+	
+
+            </select>
+            <button type="button" onclick="text()" >Submit</button>
+<!-- type="button"-->
+            </div>
+<p id="matter" style="color:red"></p>
+          </div>
+          </form>
+	
+
+          <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+                font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            }
+            body{
+                background-color:currentColor;
+            }
+    
+            #main {
+                margin-top: 40px;
+                text-align: center;
+                padding-top: 50px;
+                background: linear-gradient(to bottom right, #3cc0fe 30%,  #0066ff);
+                    width: 400px;
+                    height: 500px;
+                    border-radius: 6px;
+                    box-shadow: 0px 60px 80px -20px rgba(#27a5fd, 0.4);
+                    top:200px;
+                    left:80px;
+            }
+    
+            h1 {
+                margin-bottom: 30px;
+            }
+    
+            input[type='text'] {
+                width: 30%;
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 2px solid black;
+            }
+    
+            input[type='submit'] {
+                width: 30%;
+                padding: 5px;
+                background:black;
+                color: white;
+                text-transform: uppercase;
+            }
+            form {
+                margin-bottom: 20px;
+                
+                    
+            }
+            h3 {
+                text-emphasis-color: red;
+            }
+        </style>
+        <center>
+    <div id="main">
+        <h1>Find the Weather</h1>
+        <h2>Enter a valid city</h2>
+        <br>
+        <form method="GET">
+            <div>
+                <label for="city"></label>
+                <input type="text" id="city" value="{{ request.GET.city }}" placeholder="City..." name="city"/>
+            </div>
+            <input type="submit" value="Submit"/>
+        </form>
+        {% if result %}
+            <h3>{{ result.region }}</h3>
+            <h3>{{ result.dayhour }}</h3>
+            <h3>{{ result.temp_now }}</h3>
+            <h3>{{ result.weather_now }}</h3>
+        {% endif %}
+    </div>
+    </center>
+
+
+        </div>
+
+
+        
+
+
+
+
+        </body>
+<script>
+function text(){
+    	var e = document.getElementById("soil");
+    	var result = e.options[e.selectedIndex].text;
+    	if (result=="Black Soil"){
+        	document.getElementById("matter").innerHTML = "the moisture of the black soil is very strong hence it is excellent for cotton growing. This is also known popularly as black cotton soil. In these soils, however, there are many other crops that can be grown; rice and sugar cane, wheat, jowar, linseed, sunflower, cereal crops, citrus fruits, tomatoes, tobacco, groundnut, any crops and millets of oilseed.";
+     	}
+    	if (result=="Red Soil"){
+        	document.getElementById("matter").innerHTML = "Under ideal irrigation, rice, wheat, sugarcane, maize/corn, groundnut, ragi (finger millet) and potato, oilseeds, pulses, millets and fruit such as mango, orange, citrus, and vegetables can be grown";
+     	}
+     	if (result=="Alluvial Soil"){
+		document.getElementById("matter").innerHTML = "In these soils under ideal irrigation, tobacco, cotton, rice, wheat, bajra, sorghum (jowar), pea, pigeon pea, chickpea, black gram, green gram, soya, groundnut, mustard, linseed, sesame, barley, jute, maize, all oilseeds, vegetables, and fruits are suitable.";
+	}
+	if(result=="Laterite Soil"){
+		document.getElementById("matter").innerHTML = "These soils are not very fertile, and are used in growing cotton, growing rice, growing wheat, growing pulses, growing tea, growing coffee, growing rubber, growing coconut and growing cashews. Owing to the presence of large quantities of iron, these soils are often used to make bricks";
+	}
+	if (result=="Arid Soil"){
+		document.getElementById("matter").innerHTML ="Any drought- and saline-tolerant crops like wheat, cotton, corn (maize), millets, pulses, and barley can grow.";
+	}
+	if (result=="Desert Soil"){
+		document.getElementById("matter").innerHTML ="wing to their high acidic nature, marsh soils are not suitable for crop cultivation. Peaty soils are rich in salt and have healthy organic (humus) content. They are however deficient nutrients such as potash and phosphate. Located mainly at Kerala.";
+	}
+}
+</script>
+</html>

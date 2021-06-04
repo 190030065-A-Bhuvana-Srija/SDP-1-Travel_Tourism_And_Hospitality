@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged In Users (SWC)</title>
+    {% load static %}
+    <link rel="stylesheet"  href="{%  static  '/users.css'  %}">
+</head>
+<body>
+<div id="wrapper">
+    <h1 align="center"> LOGGED IN USERS </h1>
+    <table align="center" id="keywords" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>SNo.</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ forloop.counter }} </td>
+            <td> {{ user.email }}</td>
+            <td> {{ user.password }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table align="center"  cellspacing="0" cellpadding="0">
+        <tr>
+            <th>SNo.</th>
+            <th>Raw Product Name</th>
+        </tr>
+        {% for user in data1 %}
+        <tr>
+            <td>{{ forloop.counter }} </td>
+            <td> {{ user.rawname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

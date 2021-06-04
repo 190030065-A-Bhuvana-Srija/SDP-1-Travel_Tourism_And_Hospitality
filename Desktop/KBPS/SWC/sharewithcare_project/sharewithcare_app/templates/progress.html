@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <script>
+        (function() {
+            const myStepProgressBar = new Kodhus.StepProgressBar();
+            myStepProgressBar.init({ selector: '.horizontal', activeIndex: 0 });
+        })();
+    </script>
+    <style>
+body{
+margin: 0;
+padding: 0;
+background-color: #eee;
+}
+ul{
+display: block;
+list-style: none;
+justify-content: space-between;
+}
+.cdt-step-progressbar{
+display: block;
+margin: 100px auto;
+width: 500px;
+background-color: #fff ;
+}
+li{
+display: inline-block;
+position: relative;
+width: 35%;
+text-align: center;
+margin: 15px 0;
+}
+.nonCompleted{
+display: block;
+width: 50px;
+height: 50px;
+border-radius: 50%
+background-color: #bdbdbd;
+line-height: 50px;
+text-align: center;
+margin: 10px auto;
+content: " ";
+}
+.completed{
+content: " ";
+width: 100px;
+height: 3px;
+background-color: #bdbdbd;
+position: absolute;
+top: 35px;
+left: -50%;
+}
+.indicator + .completed{
+color: green;
+background-color: green;
+}
+    </style>
+</head>
+<body>
+<ul class="cdt-step-progressbar horizontal">
+  <li class="completed">
+    <span class="indicator">1</span>
+    <span class="title">Payment</span>
+  </li>
+  <li class="completed">
+    <span class="indicator">2</span>
+    <span class="title">Order Placed</span>
+  </li>
+
+  <li class="nonCompleted">
+    <span class="indicator">3</span>
+    <span class="title">Shipped</span>
+  </li>
+  <li class="nonCompleted">
+    <span class="indicator">4</span>
+    <span class="title">Delivered</span>
+  </li>
+</ul>
+</body>
+</html>

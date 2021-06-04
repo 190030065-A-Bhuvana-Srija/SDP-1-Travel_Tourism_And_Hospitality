@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/bestsellerstyle.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Best Sellers (SWC)</title>
+    <style>
+    body{
+        background-image: url('static/BG1.jpg');
+        background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+    }
+    .ml11 {
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.ml11 .line1 {
+  top: 0;
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.checked{
+    color : gold;
+}
+    </style>
+    <script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml11 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml11 .line',
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700
+  })
+  .add({
+    targets: '.ml11 .line',
+    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+    easing: "easeOutExpo",
+    duration: 700,
+    delay: 100
+  }).add({
+    targets: '.ml11 .letter',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=775',
+    delay: (el, i) => 34 * (i+1)
+  }).add({
+    targets: '.ml11',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  function alertmessage()
+  {
+  if(confirm("Added To Cart Successfully!\nYou will now be redirected to My Cart.")) {
+        window.location.href = 'cart';
+    }
+  }
+    </script>
+</head>
+<body>
+    <h1 class="ml11">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">BEST SELLERS</span>
+      <br>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+  </span>
+</h1>
+
+  <div class="box">
+                {% for d in data %}
+      <div class="card">
+        <div class="imgBx">
+            <img src="{{ d.image.url }}" alt="images">
+        </div>
+        <br>
+        <center>
+          <br><br>
+        <div class="details">
+            <a href="Dairy">
+                <h2>{{ d.brand }}<br><span>{{ d.name }}</span></h2>
+            </a>
+
+        </div>
+            <br><br>
+        </center>
+      </div>
+      {% endfor %}
+  </div>
+</body>
+</html>

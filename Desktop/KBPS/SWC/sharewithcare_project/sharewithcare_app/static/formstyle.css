@@ -1,0 +1,16 @@
+element.style {
+}
+@media (max-width: 1024px)
+html {
+    -webkit-text-size-adjust: 100%;
+}
+html, body {
+    height: 100%;
+}
+html[Attributes Style] {
+    -webkit-locale: "en-us";
+}
+user agent stylesheet
+html {
+    display: block;
+}

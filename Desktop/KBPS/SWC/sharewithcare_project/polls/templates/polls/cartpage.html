@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html>
+
+<head>
+
+	<title>Shopping Cart</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cartpage.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+	<h1>Shopping Cart</h1>
+
+	<div class="cart">
+{% for i,j,k in full %}
+		<div class="products">
+
+			<div class="product">
+
+				<img src="Tomato.jpg">
+
+				<div class="product-info">
+					
+					<h3 class="product-name">{{j}}</h3>
+					<h4 class="product-price">{{i}}</h4>
+					<h5 class="product-price">₹{{k}}</h5>
+
+					<p class="product-quantity">Qnt: <input value="1" name="">
+
+
+					</p>
+
+				</div>
+
+			</div>
+
+			
+{% endfor %}
+		<div class="cart-total">
+
+			<p>
+
+				<span>Total Price</span>
+
+				<span>₹ {{sum}}</span>
+
+			</p>
+
+			<p>
+
+				<span>Number of Items</span>
+
+				<span>{{le}}</span>
+
+			</p>
+			<form>
+				<input type="submit" name="out" value="Proceed to Checkout">
+			</form>
+		
+		</div>
+
+	</div>
+
+</div>
+
+
+
+</body>
+
+
+</html>

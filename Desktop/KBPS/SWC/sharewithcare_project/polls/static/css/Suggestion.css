@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+ background-image:url(Ramkumar\ Radhakrishnan\,\ Wikimedia-1569929663.jpeg);
+ background-position: center;
+ background-size:cover;
+ font-family: sans-serif;
+ margin-top: 40px;
+}
+p
+{
+ background-position: center;
+ background-size:cover;
+ font-family: sans-serif;
+ margin-top: 40px;
+}
+.regform
+{
+    width: 800px;
+    background-color: rgb(0,0,0,0.6);
+    margin:auto;
+    color:#ffffff;
+    padding:10px 0px 10px 0px;
+    text-align:center;
+    border-radius:15px 15px 0px 0px;
+}
+.main
+{ 
+    background-color: rgb(0,0,0,0.5);
+    width: 800px;
+    min-height: 600px;
+    margin: auto;
+}
+ form
+ {
+  padding:10px;
+ }
+
+.name{
+    margin-left:25px;
+    margin-top: 30px;
+    width:125px;
+    color:white;
+    font-size:18px;
+    font-weight: 700;
+}
+
+
+
+.option
+{
+    position: relative;
+    left:200px;
+    top:-30px;
+    line-height: 40px;
+    width:532px;
+    height:40px;
+    border-radius:4px;
+    padding:0 22px;
+    font-size:16px;
+    color:#555;
+    outline:none;
+    overflow:hidden;
+
+}
+.option option{
+    font-size:20px;
+}
+button
+{
+    background: #00fc01;
+    width: 25%;
+    height:10%;
+    color:#fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    border:none;
+    border-radius: 5px;
+    margin-left: 290px;
+}
+button:hover{
+    background: #000;
+  }
+
+
+
+
+
+
+
+    
+}

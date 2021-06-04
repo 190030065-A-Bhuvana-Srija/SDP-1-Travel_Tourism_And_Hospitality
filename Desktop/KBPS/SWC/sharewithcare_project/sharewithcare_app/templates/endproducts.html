@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>End Products (SWC)</title>
+    <link rel="stylesheet"  href="{%  static  '/rawproductstyle.css'  %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    * {
+      margin: 0px auto;
+      padding: 0px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body{
+        background-image: url('static/BG1.jpg');
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('button').click(function(){
+            $('.alert').show()
+        })
+    });
+    </script>
+<body>
+    <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index" class="w3-bar-item w3-button"> HOME</a>
+    <a href="index" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>  ABOUT</a>
+    <a href="index" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="profile" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-user"> MY PROFILE </i>
+    </a>
+    <a href="cart" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-cart-plus"> MY CART</i>
+    </a>
+<br><br>
+  </div>
+    <div class="float-container">
+        {% for d in data %}
+        <div class="float-child">
+        <div class="card">
+            <img src="{{ d.image.url}}" alt="connect" style="max-height:400px">
+            <div class="descriptions">
+                <h1>{{ d.endname }}</h1>
+                <center>
+                    <br><br>
+                <table border="2">
+                    <tr>
+                        <th> Price </th>
+                        <th> Quantity </th>
+                        <th> Brand </th>
+                    </tr>
+                    <tr>
+                        <td>{{ d.price }}</td>
+                        <td>{{ d.quantity }}</td>
+                        <td>{{ d.brandname }}</td>
+                    </tr>
+                </table>
+                    <br><br>
+                <a href="cart"><button>Add To Cart</button></a> &nbsp; <a href="pay"><button>Proceed To Pay</button></a>
+                <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    Added To Cart Successfully!
+                </div>
+                </center>
+                <br>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

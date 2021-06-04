@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+<head>
+<title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script>
+        var str='{{mssg}}';
+        var n = str.length;
+        if(n!=0){
+        alert('{{ mssg }}');
+        }
+    </script>
+<body>
+    <div class="loginbox">
+    <img src="{% static 'css/avatar.png' %}" class="avatar">
+        <h1>Login Here for buyers</h1>
+        <form  method="GET">
+            <label for="nam">User Name</label>
+            <input type="text" name="who" id="nam"><br/>
+            <label for="id_1723">Password</label>
+            <input type="text" name="pass" id="id_1723"><br/>
+            <input type="submit" value="login">
+            <input type="submit" name="cancel" value="Cancel">
+            <a href="/polls/forgtpswrd/"style="background-color:cyan" >forgot password</a><br>
+            <a href="/polls/signup/"style="background-color:cyan" >sign up  for buyers</a><br>
+            </form>
+            
+            
+            
+    </div>
+
+</body>
+</head>
+</html>

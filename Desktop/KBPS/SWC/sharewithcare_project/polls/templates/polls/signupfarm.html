@@ -1,0 +1,61 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form In HTML and CSS</title>
+	<link rel="stylesheet" href="{% static 'css/signuppage.css' %}">
+</head>
+<body>
+	
+<div class="wrapper">
+	<div class="registration_form">
+		<div class="title">
+			Registration Form
+		</div>
+
+		<form method="GET">
+			<div class="form_wrap">
+				<div class="input_grp">
+					<div class="input_wrap">
+						<label for="nam">Farmer Name</label>
+                        <input type="text" name="who" id="nam">
+                    <div class="input_wrap">
+                        <label for="n">Farmer id</label>
+                        <input type="text" name="ident" id="ident">
+                    </div>
+                <div class="input_wrap">
+                     <label for="phn">phone number </label>
+                    <input type="text" name="phn" id="nam">
+                </div>
+<div class="input_wrap">
+<label for="email">email</label>
+<input type="text" name="email" id="email">
+</div>
+<div class="input_wrap">
+<label for="psswrd">password</label>
+<input type="text" name="pass" id="psswrd">
+</div>
+
+
+				<div class="input_wrap">
+					<input type="submit" name="sellers" value="Register Now" class="submit_btn">
+				</div>
+                <div class="input_wrap">
+                    <input type="submit" name="cancel" value="Cancel" class="cancel_btn">
+                </div>
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+    var str='{{mssg}}';
+    var n = str.length;
+    if(n!=0){
+    alert('{{ mssg }}');
+    }
+</script>
+
+</body>
+</html>

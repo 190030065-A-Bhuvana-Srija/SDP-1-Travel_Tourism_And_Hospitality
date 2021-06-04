@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Portal (SWC)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/paystyle.css' %}">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+.button{
+background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+  0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+}
+    </style>
+    <script>
+        Swal.fire(
+          'Good job!',
+          'You clicked the button!',
+          'success'
+        )
+        function purchaseClicked() {
+            alert('Thank You For Your Purchase!')
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            while (cartItems.hasChildNodes()) {
+                cartItems.removeChild(cartItems.firstChild)
+            }
+            updateCartTotal()
+        }
+    </script>
+</head>
+<body>
+<div class="body-text"><h1>PAYMENT PORTAL (SWC)</h1></div>
+
+  <form method="post" action="index">
+      {% csrf_token %}
+    <div class="form-container">
+      <div class="personal-information">
+      </div> <!-- end of personal-information -->
+
+          <input id="column-left" type="text" name="username" required="required"  placeholder="Username"/>
+          <input id="column-right" type="text" name="email" required="required"  placeholder="Email"/>
+          <input id="input-field" type="text" name="number" required="required"  placeholder="Card Number"/>
+          <input id="column-left" type="text" name="expiry" required="required"  placeholder="MM / YY"/>
+          <input id="column-right" type="text" name="cvc" required="required"  placeholder="CCV"/>
+
+          <div class="card-wrapper"></div>
+
+          <input id="input-field" type="text" name="streetaddress" required="required" autocomplete="on" maxlength="45" placeholder="Streed Address"/>
+          <input id="column-left" type="text" name="city" required="required" autocomplete="on" maxlength="20" placeholder="City"/>
+          <input id="column-right" type="text" name="zipcode" required="required" autocomplete="on" pattern="[0-9]*" maxlength="5" placeholder="ZIP code"/>
+            <input id="column-right" type="password" name="email" placeholder="Password"/>
+        <br>
+        <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+          <a href= sharewithcare_app>
+              <h4  style="color : white">
+                  <input onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" id="input-button" type="submit">
+              </h4>
+          </a>
+        <center>
+            <a href= coupon>
+            <input id="input-button" class="button"
+                   style="color : red;
+                  border: none;
+                  color: white;
+                  padding: 16px 32px;
+                  text-decoration: none;
+                  margin: 4px 2px;
+                  cursor: pointer;" value="Explore Coupons  ">
+            </a>
+        </center>
+    </div>
+    </form>
+  </div>
+
+</body>
+</html>

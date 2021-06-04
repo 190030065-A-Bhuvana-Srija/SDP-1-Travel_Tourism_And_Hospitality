@@ -1,0 +1,85 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contac Us</title>
+    <link rel ="stylesheet" href="{% static 'css/contactus.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" >
+        <h1>Contact Us</h1>
+        <p>We would love to reply to your Queries and help you succeed</p>
+        <div class ="contact-box">
+            <div class="contact-left">
+                <h3>Sent your request</h3>
+                <form>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="nam" placeholder="Your Name">
+                        </div>
+                        <div class="input-group">
+                            <label>City</label>
+                            <input type="text"name="city" placeholder="Your City">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="text" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="input-group">
+                            <label>phn no</label>
+                            <input type="text"  name="phn" placeholder="Your phn no">
+                        </div>
+                    </div>
+
+                    <label>Query</label>
+                    <textarea rows="5"  name="query" placeholder="your Query"></textarea>
+                    <button type="submit"  onclick="clicked();">Submit</button>
+                </form>
+            </div>
+            <div class="contact-right">
+                <h3>Reach us</h3>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>Wadgrp2@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phn no</td>
+                        <td>+91 1234567890</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>IIIT sricity Chittor</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script >
+        function clicked() {
+            alert('Thanks for your query we will look into it');
+        }
+        var str='{{mssg}}';
+        var n = str.length;
+        if(n!=0){
+        alert('{{ mssg }}');
+        }
+    </script>
+    <script>
+        var str='{{mssg}}';
+        var n = str.length;
+        if(n!=0){
+        alert('{{ mssg }}');
+        }
+    </script>
+</body>
+</html>

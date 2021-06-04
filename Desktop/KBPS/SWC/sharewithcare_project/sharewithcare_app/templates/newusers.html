@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet"  href="{%  static  '/users.css'  %}">
+    <meta charset="UTF-8">
+    <title>Signed In Users (SWC)</title>
+</head>
+<body>
+<div id="wrapper">
+    <h1 align="center"> SIGNED IN USERS </h1>
+    <table align="center" id="keywords" cellspacing="0" cellpadding="0">
+        <tr class="keywords">
+            <b><th>SNo.</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th></b>
+        </tr>
+        {% for user in users %}
+        <tr id="lalign">
+            <td>{{ forloop.counter }} </td>
+            <td> {{ user.email }}</td>
+            <td> {{ user.username }}</td>
+            <td> {{ user.password }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

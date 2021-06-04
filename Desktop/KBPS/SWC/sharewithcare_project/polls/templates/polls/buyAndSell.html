@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/productspage.css' %}">
+        <!-- font awesome -->
+        
+        . . .
+<body>
+<!--First section-->
+<header>
+   <!-- hey {{name}}-->
+  <div style="background-image: url({%static 'css/31171457-fresh-and-organic-vegetables-in-market-at-thailand.jpg' %});  background-size: cover; height:480px; padding-top:80px;">
+  <ul class="nav-area">
+    <li><a href="/polls/home/"><u>Home</u></a></li>
+    <li><a href="/polls/buyfarm/"><u>Buying</u></a></li>
+<li><a href="/polls/sell/"><u>Selling</u></a></li>
+<li><a href="/polls/checkcartfarm/"><u>wishList</u></a></li>
+<li><a href="/polls/sugg/"><u>For Suggestions</u></a></li>
+<li><a href="/polls/loginfarm/"><u>Log Out</u></a></li>
+    </ul>
+</header>
+  </div>
+</body>
+...
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div class = "products">
+            <div class = "container">
+                <h1 class = "lg-title">Fruits and Vegetables  Seeds with special Offers</h1>
+                <p class = "text-light">Start buying  fresh fruits and vegetables by adding them to the cart and enjoy delivery services 24/7 !!</p>
+                <center>
+                    <form class="sv">
+                        <h2 class="name">Search</h2>
+                        <input type="text" class="crop" name="crop" placeholder="Search Anything">
+                            <div class="bts">
+                            <button class="submit">SUBMIT</button>
+                        </div>
+                    
+                    </form>
+                    <h2>OR</h2>
+                <a href="/polls/buyfarm/" style="text-align :center" > To buy go here</a>
+                </center>
+                <div class = "product-items">
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/tomatoseeds.jpg' %} alt = "product image">
+                            </div>
+                         <!--   <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+				-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Vegetable seeds</h2>
+                                 
+                            </div>
+                            <a href = "#" class = "product-name">Tomatoe seeds</a>
+                            <p class = "product-price">₹ 100.00</p>
+                            <p class = "product-price">₹ 65.00</p>
+                        </div>
+
+                       
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/chilliseeds.jpg' %} alt = "product image">
+                            </div>
+                          <!--  <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">seeds</h2>
+                                
+                            </div>
+                            <a href = "#" class = "product-name">Chilli seeds</a>
+                            <p class = "product-price">₹ 150.00</p>
+                            <p class = "product-price">₹ 75.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/pumpkinseeds.jpg' %} alt = "product image">
+                            </div>
+                            <!--<div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">seeds</h2>
+                               
+                            </div>
+                            <a href = "#" class = "product-name">pumpkin seeds</a>
+                            <p class = "product-price">₹ 100.00</p>
+                            <p class = "product-price">₹ 73.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/capsicumseeds.jpg' %} alt = "product image">
+                            </div>
+                         <!--  <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">seeds</h2>
+                               
+                            </div>
+                            <a href = "#" class = "product-name">Capsicum seeds</a>
+                            <p class = "product-price">₹ 150.00</p>
+                            <p class = "product-price">₹ 68.00</p>
+                        </div>
+
+                      
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/peasseeds.jpg' %} alt = "product image">
+                            </div>
+                           <!-- <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">seeds</h2>
+                               
+                            </div>
+                            <a href = "#" class = "product-name">Peas seeds</a>
+                            <p class = "product-price">₹ 45.00</p>
+                            <p class = "product-price">₹ 39.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/appleseeds.jpg' %} alt = "product image">
+                            </div>
+                          <!--  <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">seeds</h2>
+                              
+                            </div>
+                            <a href = "#" class = "product-name">apple seeds</a>
+                            <p class = "product-price">₹ 67.00</p>
+                            <p class = "product-price">₹ 47.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/urea.jpg' %} alt = "product image">
+                            </div>
+                          <!--  <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">UREA</h2>
+                               
+                            </div>
+                            <a href = "#" class = "product-name">UREA</a>
+                            <p class = "product-price">₹ 50.00</p>
+                            <p class = "product-price">₹ 22.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = {% static 'css/pesticides.jpg' %} alt ="product image">
+                            </div>
+                          <!--  <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>-->
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">pesticides</h2>
+                              
+                            </div>
+                            <a href = "#" class = "product-name">pesticides</a>
+                            <p class = "product-price">40.00 ₹</p>
+                            <p class = "product-price">33.00 ₹</p>
+                        </div>
+
+                       
+                    </div>
+                    <!-- end of single product -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            localStorage.setItem("loginname","{{name}}")
+            var name=localStorage.getItem("loginname");
+            document.getElementById('name').innerHTML=name;
+        </script>
+    </body>
+</html>

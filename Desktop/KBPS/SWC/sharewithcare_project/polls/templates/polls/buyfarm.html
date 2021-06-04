@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/buyerselect.css' %}">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>E-Market</title>
+        </head>
+        <body>
+        <div class="regform"><h1>Farmer Grains and equipment Selection</h1></div>
+        <div class="main">
+        <form class="sv">
+            <h2 class="name">Search</h2>
+            <input type="text" class="crop" name="crop" placeholder="Search Anything">
+                <div class="bts">
+                <button class="submit">SUBMIT</button>
+            </div>
+        
+        </form>
+        <h4  style="color: white;">available sellers and their prices</h4>
+        <h4 id="not" style="color: white;"></h4> 
+        {% for i in  obj %}
+        <h4  style="color: white;">{{i.company}}  and price = {{i.priceperkg}} Rs</h4>
+              {% endfor %}
+      
+        <form class="ht">
+            <h2 class="name">Seller</h2>
+            <select class="option" name="seller" id="seller">
+            <option disabled="disabled" selected="selected">Choose Option</option>
+            {% for i in  obj %}
+            <option style="color: black" value="{{i.company}}">{{i.company}}</option>
+            {% endfor%}
+            </select>
+            
+            <h2 class="name">User Name</h2> 
+            <input class="fname" type="text" name="who" id="nam">	
+		          <h2 class="name">City</h2>
+            <input cLass="city" type="text" name="city" id="city">
+            <h2 class="name">Phone Number</h2>
+            <input class="number" type="text" name="phn" id="phn">
+            <h2 class="name">E-mail  optional</h2>
+            <input class="email" type="text"  name="email" id="email">
+           
+            <div class="field btns">
+              <button class="prev-1 prev">Buy Now </button>
+              <button class="next-1 next"  name="cart">Add to Cart</button>
+            </div>
+
+        </form>
+        </div>
+
+
+      <script>
+        var name=localStorage.getItem("loginname");
+                document.getElementById("nam").value = name;
+                localStorage.setItem("cropnamebuyer","{{crop_nm}}");
+                  var non='{{nope}}';
+                  var ne = non.length;
+              if(ne!=0){
+                document.getElementById("not").innerHTML = "no seller for the selected product right now!!";
+              }
+                var str='{{mssg}}';
+              var n = str.length;
+              if(n!=0){
+              alert('{{ mssg }}');
+              }
+          </script>
+        </body>
+</html>

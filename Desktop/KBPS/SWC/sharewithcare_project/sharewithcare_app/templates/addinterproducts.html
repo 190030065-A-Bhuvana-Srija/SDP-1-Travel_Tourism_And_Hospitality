@@ -1,0 +1,85 @@
+<html lang="en-us">
+<head>
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+    <script src="/static/admin/js/nav_sidebar.js" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    <meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" login" data-admin-utc-offset="0" data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+
+
+    <div class="main shifted" id="main">
+
+
+
+      <div class="content">
+
+
+
+        <!-- Content -->
+        <div id="content" class="colM">
+
+
+
+
+
+
+
+<div id="content-main">
+
+
+
+<form action="/admin/login/?next=/admin/" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="C527tM2QYNUWSkZRlALHBog7k303JAVMLF7B37usKeiBftqQMzjUhnUw1CuhcClH">
+  <div class="form-row">
+    <center>
+    <form method="post" action="addendproducts" enctype="multipart/form-data">
+             {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <br>
+    </form>
+    </center>
+        <button class="submit-row"><a href="addendproducts">ADD THIS INTERMEDIATE PRODUCT </a></button>
+        <button class="submit-row"><a href="rawproducts">REVIEW THE ADDED RAW PRODUCT </a></button>
+  </div>
+</form>
+
+</div>
+
+
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+
+
+</body></html>
